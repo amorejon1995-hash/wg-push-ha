@@ -1,5 +1,5 @@
 name: 'WG Push (Surfshark)'
-version: '1.0.0'
+version: '1.0.1'
 image: 'ttl.sh/39e95897-33f1-4e9d-b995-775b4b18ff24'
 slug: 'wg_push'
 description: 'Túnel WireGuard de ruta partida solo para el servicio de empuje de notificaciones de Home Assistant, con hombre muerto supervisado por HA.'
@@ -13,6 +13,8 @@ privileged:
   - NET_ADMIN
 hassio_api: true
 homeassistant_api: true
+map:
+  - share:rw
 options:
   endpoint_host: 'us-mia.prod.surfshark.com'
   endpoint_port: 51820
