@@ -1,35 +1,35 @@
 name: 'WG Push (Surfshark)'
-version: '1.0.1'
-image: 'ttl.sh/39e95897-33f1-4e9d-b995-775b4b18ff24'
+description: 'Túnel WireGuard de ruta partida SOLO hacia el servicio de empuje de notificaciones de HA (mobile-apps.home-assistant.io) y a los registros de imágenes ghcr.io, con salvaguardas para Tailscale y Cloudflare, con interruptor de hombre muerto: si Home Assistant deja de renovar el latido, el túnel se tumba solo y la caja vuelve a su salida directa de siempre. No toca la ruta por defecto ni ningún otro tráfico.'
+version: '1.1.0'
+image: 'ttl.sh/305fd07f-0b13-4951-8236-816121e5d3d9:1.1.0'
 slug: 'wg_push'
-description: 'Túnel WireGuard de ruta partida solo para el servicio de empuje de notificaciones de Home Assistant, con hombre muerto supervisado por HA.'
+init: false
 arch:
   - amd64
 startup: 'application'
 boot: 'manual'
-init: false
 host_network: true
-privileged:
-  - NET_ADMIN
 hassio_api: true
 homeassistant_api: true
-map:
-  - share:rw
+privileged:
+  - NET_ADMIN
 options:
-  endpoint_host: 'us-mia.prod.surfshark.com'
-  endpoint_port: 51820
-  interface_address: '10.14.0.2/16'
   private_key: ''
   peer_public_key: ''
+  endpoint_host: ''
+  endpoint_port: 51820
+  interface_address: ''
   push_host: 'mobile-apps.home-assistant.io'
   deadman_ttl_s: 300
   arranque_gracia_s: 180
+  registry_hosts_extra: []
 schema:
+  private_key: password
+  peer_public_key: str
   endpoint_host: str
   endpoint_port: int
   interface_address: str
-  private_key: password
-  peer_public_key: str
   push_host: str
   deadman_ttl_s: int
   arranque_gracia_s: int
+  registry_hosts_extra: [str]
