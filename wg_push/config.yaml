@@ -13,6 +13,8 @@ hassio_api: true
 homeassistant_api: true
 privileged:
   - NET_ADMIN
+  map:
+    - share:rw
 options:
   private_key: ''
   peer_public_key: ''
