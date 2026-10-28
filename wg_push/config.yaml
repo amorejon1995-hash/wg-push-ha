@@ -1,6 +1,6 @@
 name: 'WG Push (Surfshark)'
 description: 'Túnel WireGuard de ruta partida SOLO hacia el servicio de empuje de notificaciones de HA (mobile-apps.home-assistant.io) y a los registros de imágenes ghcr.io, con salvaguardas para Tailscale y Cloudflare, con interruptor de hombre muerto: si Home Assistant deja de renovar el latido, el túnel se tumba solo y la caja vuelve a su salida directa de siempre. No toca la ruta por defecto ni ningún otro tráfico.'
-version: '1.1.1'
+version: '1.1.2'
 image: 'ttl.sh/305fd07f-0b13-4951-8236-816121e5d3d9'
 slug: 'wg_push'
 init: false
